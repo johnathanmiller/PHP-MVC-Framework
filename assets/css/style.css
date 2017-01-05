@@ -33,17 +33,35 @@ html, body {
   float: none;
   z-index: 999;
 }
+.navbar-brand {
+  padding: 15px 0;
+}
 
 /* CONTENT
 ** ============================ */
 .content-wrapper {
   min-height: 100%;
   position: relative;
+  padding-top: 45px;
 }
 
 .content {
   min-height: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 95px;
+}
+
+/* SIDEBAR
+** ============================ */
+aside .btn {
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+aside .btn:hover {
+  text-decoration: none;
+}
+aside .btn:last-child {
+  margin-bottom: 0;
 }
 
 /* FOOTER
