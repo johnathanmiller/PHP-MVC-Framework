@@ -6,21 +6,19 @@ class General {
 
 		$title_array = array();
 
-		$sep = ($sep === null) ? '-' : $sep;
-
 		if ($controller !== 'home' && $view === 'index') {
 
 			$title_array[] = ucfirst($controller);
-			$title_array[] = $sep;
 
 		} else if ($view !== 'index') {
 
 			$title_array[] = ucfirst($view);
-			$title_array[] = $sep;
 
 		}
 
-		return (!empty($title_array)) ? implode(' ', $title_array) .' '. SITE_NAME : SITE_NAME;
+		$sep = ($sep === null) ? '-' : $sep;
+
+		return (!empty($title_array)) ? implode(' ', $title_array) .' '. $sep .' '. SITE_NAME : SITE_NAME;
 
 	}
 
