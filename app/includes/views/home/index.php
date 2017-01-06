@@ -10,7 +10,7 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<?php include_once 'template/sidebar.php'; ?>
+						<?php $get['component']->sidebar('sidebar'); ?>
 					</div>
 				</div>
 			</div>

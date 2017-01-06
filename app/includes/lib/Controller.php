@@ -8,8 +8,10 @@ class Controller {
 
 	public function view($data = [], $model = null) {
 
+		$controller = strtolower(get_called_class());
+
 		// We select the directory that matches the controller class
-		$view_dir = VIEWS . strtolower(get_called_class()) . DS;
+		$view_dir = VIEWS . $controller . DS;
 
 		// The view we're selecting is the method
 		$view = strtolower(debug_backtrace()[1]['function']);
@@ -56,11 +58,21 @@ class Controller {
 			$model = $this->model($model);
 		}
 
-		$site_title = General::site_title(strtolower(get_called_class()), $view);
+		// Load methods before rendering view
+		$get = $this->loadBeforeView($controller, $view);
 
 		require_once $view_dir .'template/header.php';
 		require_once $view_dir . $new_view;
 		require_once $view_dir .'template/footer.php';
+	}
+
+	public function loadBeforeView($controller, $view) {
+
+		return array(
+			'site_title' => General::site_title($controller, $view),
+			'component' => new Component($controller)
+		);
+
 	}
 	
 }
