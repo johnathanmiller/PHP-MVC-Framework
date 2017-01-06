@@ -56,6 +56,8 @@ class Controller {
 			$model = $this->model($model);
 		}
 
+		$site_title = General::site_title(strtolower(get_called_class()), $view);
+
 		require_once $view_dir .'template/header.php';
 		require_once $view_dir . $new_view;
 		require_once $view_dir .'template/footer.php';
