@@ -30,8 +30,6 @@ class Application {
 		}
 
 		require_once CONTROLLERS . $this->controller .'.php';
-
-		$this->method_class	= $this->controller;
 		$this->controller	= new $this->controller;
 
 		/**
@@ -51,15 +49,16 @@ class Application {
 			// If first parameter matches method in called controller object, set method
 			$this->method = $url[1];
 
-		} else if ($this->method_class === 'home' && !method_exists($this->controller, $url[1])) {
+		} else if (!method_exists($this->controller, $url[1])) {
 
 			/**
 			 *
-			 * If home is set as method_class and method is not in controller object
-			 * Set method to the 404 method var
+			 * If method is not in controller object
+			 * Set controller to default controller and set method to the 404 method var
 			 *
 			 */
-			
+			$default_vars = get_class_vars(__CLASS__);
+			$this->controller = new $default_vars['controller']();
 			$this->method = $this->no_method;
 
 		}
