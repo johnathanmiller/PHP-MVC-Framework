@@ -66,7 +66,7 @@ class Controller {
 		require_once $view_dir .'template/footer.php';
 	}
 
-	public function loadBeforeView($controller, $view) {
+	private function loadBeforeView($controller, $view) {
 
 		return array(
 			'site_title' => General::site_title($controller, $view),
