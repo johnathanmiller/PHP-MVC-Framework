@@ -69,8 +69,7 @@ class Controller {
 	private function loadBeforeView($controller, $view) {
 
 		return array(
-			'site_title' => General::site_title($controller, $view),
-			'component' => new Component($controller)
+			'component' => new Component($controller, $view)
 		);
 
 	}
