@@ -1,6 +1,7 @@
 <?php
 
 Session::start();
+Url::redirectUser(SITE_URL);
 
 if (!empty(Session::get('email'))) {
 

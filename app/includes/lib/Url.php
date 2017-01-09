@@ -29,6 +29,12 @@ class Url {
 		exit();
 	}
 
+	public static function redirectUser($url) {
+		if (array_intersect(array('login', 'signup'), self::currentPage()) && !empty(Session::get('email'))) {
+			self::redirect($url);
+		}
+	}
+
 }
 
 ?>
