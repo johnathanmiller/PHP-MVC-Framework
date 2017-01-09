@@ -75,7 +75,8 @@ class Controller {
 	private function loadBeforeView($controller, $view) {
 
 		return array(
-			'component' => new Component($controller, $view)
+			'component' => new Component($controller, $view),
+			'user' => new User()
 		);
 
 	}

@@ -1,4 +1,23 @@
-<?php Session::start(); ?>
+<?php
+
+Session::start();
+
+if (!empty(Session::get('email'))) {
+
+	if (time() > Session::get('session_expire') || empty(Session::get('session_expire'))) {
+
+		Session::destroy();
+		Url::redirect(SITE_URL);
+
+	} else {
+
+		$get_user = $get['user']->getUser($get['user']->getCurrentUser()['email']);
+
+	}
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

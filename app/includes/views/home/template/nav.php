@@ -16,6 +16,17 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<?php print SITE_URL; ?>/404">404</a></li>
 						<li><a href="<?php print SITE_URL; ?>/contact">Contact</a></li>
+						<?php if (!empty(Session::get('email'))): ?>
+						<li class="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $get_user['email']; ?> <span class="caret"></span></a>
+		                    <ul class="dropdown-menu">
+								<li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+		                    </ul>
+		                </li>
+						<?php else: ?>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/signup">Sign up</a></li>
+						<?php endif; ?>
 					</ul>
 				</div>
 			</div>
