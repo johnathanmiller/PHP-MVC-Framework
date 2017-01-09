@@ -66,7 +66,7 @@ if (!empty($_POST)) {
 								</div>
 								<input type="hidden" name="token" value="<?php echo Session::get('token'); ?>">
 								<button type="submit" class="btn btn-primary">Login</button>
-								<a href="<?php print SITE_URL; ?>" class="btn btn-link">Cancel</button>
+								<a href="<?php print SITE_URL; ?>" class="btn btn-link">Cancel</a>
 							</form>
 						</div>
 					</div>
