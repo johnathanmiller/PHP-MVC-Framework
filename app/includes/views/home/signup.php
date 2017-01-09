@@ -7,7 +7,6 @@ if (!empty($_POST)) {
 	$email = filter_var(trim(strtolower($_POST['email'])), FILTER_SANITIZE_EMAIL);
 	$password = $_POST['password'];
 	$repeat_password = $_POST['repeat_password'];
-	// $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 	if (empty($_POST['email'])) {
 
@@ -23,6 +22,10 @@ if (!empty($_POST)) {
 
 		$errors[] = 'Password field should not be empty.';
 
+	} else if (strlen($password) < 8) {
+
+		$errors[] = 'Password should be at least 8 characters in length.';
+
 	}
 
 	if (empty($repeat_password)) {
@@ -30,8 +33,6 @@ if (!empty($_POST)) {
 		$errors[] = 'Repeat Password field should not be empty.';
 
 	}
-
-	// pw min length
 
 	if ($repeat_password !== $password) {
 
