@@ -58,6 +58,12 @@ class Controller {
 			$model = $this->model($model);
 		}
 
+		// Create soft fallback to 404 when view file doesn't exist
+		if (!file_exists($view_dir . $new_view)) {
+			$controller = 'home';
+			$new_view = '404.php';
+		}
+
 		// Load methods before rendering view
 		$get = $this->loadBeforeView($controller, $view);
 
