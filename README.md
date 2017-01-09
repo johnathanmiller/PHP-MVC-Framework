@@ -1,15 +1,6 @@
 # PHP MVC Framework
 [Demo](http://php-mvc.johnathanmiller.com 'PHP MVC Framework Demo')
 
-## Database Settings
-Edit file `app/config.php`
-```php
-defined('DB_HOST')		|| define('DB_HOST', 'your_db_host');
-defined('DB_USER')		|| define('DB_USER', 'your_db_user');
-defined('DB_PASS')		|| define('DB_PASS', 'your_db_password');
-defined('DB_NAME')		|| define('DB_NAME', 'your_db_name');
-```
-
 ## CSRF Prevention
 In any form you place in a view you'll need to insert the CSRF token field right before the submit button.
 ```html
@@ -30,8 +21,29 @@ Most MVC frameworks typically display the `home` controller and `index` method v
 ## Framework Components
 These consist of common elements you'd normally find on any given site. Components are callable methods to include in a view.
 
-#### Sidebars
+### Sidebars
 To display a sidebar in your view you simply place this line. The argument inside the sidebar method is looking for a filename, no need to include the extension. Make sure your sidebar file(s) are placed in the template directory of your view.
 ```php
 <?php $get['component']->sidebar('sidebar'); ?>
+```
+
+## Database Settings
+Edit file `app/config.php` to add your database credentials.
+```php
+defined('DB_HOST')		|| define('DB_HOST', 'your_db_host');
+defined('DB_USER')		|| define('DB_USER', 'your_db_user');
+defined('DB_PASS')		|| define('DB_PASS', 'your_db_password');
+defined('DB_NAME')		|| define('DB_NAME', 'your_db_name');
+```
+
+### Example User table
+```sql
+CREATE TABLE `mvc_users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `password` varchar(60) NOT NULL DEFAULT '',
+  `joined_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
