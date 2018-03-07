@@ -19,7 +19,13 @@ Views are linked by methods inside the controller class. Inside the `home` contr
 Most MVC frameworks typically display the `home` controller and `index` method view in the url, but your site tends to look better without the unnecessary baggage on the home page. We leave these out by setting a default controller of `home` and a default method of `index` when no parameters are passed in the url.
 
 ## Framework Components
-These consist of common elements you'd normally find on any given site. Components are callable methods to include in a view.
+Components are callable methods to include in a view.
+
+### Site Title
+Retrieves the current page tile.
+```php
+<?php echo $get['component']->site_title(); ?>
+```
 
 ### Sidebars
 To display a sidebar in your view you simply place this line. The argument inside the sidebar method is looking for a filename, no need to include the extension. Make sure your sidebar file(s) are placed in the template directory of your view.
