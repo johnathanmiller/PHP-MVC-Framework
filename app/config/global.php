@@ -18,9 +18,3 @@ defined('LIB')			|| define('LIB', INCLUDES .'lib'. DS);
 defined('MODELS')		|| define('MODELS', INCLUDES .'models'. DS);
 defined('STORAGE')		|| define('STORAGE', INCLUDES .'storage'. DS);
 defined('VIEWS')		|| define('VIEWS', INCLUDES .'views'. DS);
-
-// DATABASE CONFIGURATION
-defined('DB_HOST')		|| define('DB_HOST', '');
-defined('DB_USER')		|| define('DB_USER', '');
-defined('DB_PASS')		|| define('DB_PASS', '');
-defined('DB_NAME')		|| define('DB_NAME', '');

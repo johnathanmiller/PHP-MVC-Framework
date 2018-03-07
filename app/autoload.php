@@ -2,7 +2,8 @@
 
 spl_autoload_register('autoloader');
 
-require_once 'config.php';
+require_once './app/config/global.php';
+require_once (in_array($_SERVER['SERVER_ADDR'], ['::1', '127.0.0.1'])) ? './app/config/dev.php' : './app/config/prod.php';
 
 function autoloader($class) {
 
