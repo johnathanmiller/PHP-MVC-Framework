@@ -16,7 +16,7 @@
 								<div class="form-group">
 									<textarea class="form-control" name="message" id="message" rows="3" placeholder="Message"></textarea>
 								</div>
-								<input type="hidden" name="token" value="<?php echo Session::get('token'); ?>">
+								<?php echo Security::renderCSRFInput(); ?>
 								<button type="submit" class="btn btn-primary">Send</button>
 							</form>
 							<!-- end form -->

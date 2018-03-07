@@ -64,7 +64,7 @@ if (!empty($_POST)) {
 								<div class="form-group">
 									<input type="password" class="form-control" name="password" id="password" placeholder="Password">
 								</div>
-								<input type="hidden" name="token" value="<?php echo Session::get('token'); ?>">
+								<?php echo Security::renderCSRFInput(); ?>
 								<button type="submit" class="btn btn-primary">Login</button>
 								<a href="<?php print SITE_URL; ?>" class="btn btn-link">Cancel</a>
 							</form>

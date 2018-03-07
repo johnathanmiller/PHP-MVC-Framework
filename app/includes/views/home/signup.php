@@ -82,7 +82,7 @@ if (!empty($_POST)) {
 								<div class="form-group">
 									<input type="password" class="form-control" name="repeat_password" id="repeat_password" placeholder="Repeat Password">
 								</div>
-								<input type="hidden" name="token" value="<?php echo Session::get('token'); ?>">
+								<?php echo Security::renderCSRFInput(); ?>
 								<button type="submit" class="btn btn-primary">Sign up</button>
 								<a href="/login" class="btn btn-link">Cancel</a>
 							</form>

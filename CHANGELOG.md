@@ -1,3 +1,8 @@
+## 1.0.18, 2018-03-07
+- Added protected variable token_name in Security class
+- Added renderCSRFInput method in Security class
+- Updated contact/login/signup home views with new renderCSRFInput method
+
 ## 1.0.17, 2018-03-06
 - Updated autoloader
 
