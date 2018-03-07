@@ -4,17 +4,19 @@ date_default_timezone_set('UTC');
 
 $protocol = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
 
-defined('DS')			|| define('DS', DIRECTORY_SEPARATOR);
-defined('SITE_NAME')	|| define('SITE_NAME', 'PHP MVC Framework');
-defined('SITE_URL')		|| define('SITE_URL', $protocol . $_SERVER['SERVER_NAME']);
-defined('ROOT_PATH')	|| define('ROOT_PATH', realpath(dirname(__FILE__) . DS .'..'. DS));
-defined('ASSETS_DIR')	|| define('ASSETS_DIR', SITE_URL . DS .'assets'. DS);
-defined('CSS_DIR')		|| define('CSS_DIR', ASSETS_DIR .'css');
-defined('JS_DIR')		|| define('JS_DIR', ASSETS_DIR .'js');
-defined('APP_DIR')		|| define('APP_DIR', 'app'. DS);
-defined('INCLUDES')		|| define('INCLUDES', APP_DIR .'includes'. DS);
-defined('CONTROLLERS')	|| define('CONTROLLERS', INCLUDES .'controllers'. DS);
-defined('LIB')			|| define('LIB', INCLUDES .'lib'. DS);
-defined('MODELS')		|| define('MODELS', INCLUDES .'models'. DS);
-defined('STORAGE')		|| define('STORAGE', INCLUDES .'storage'. DS);
-defined('VIEWS')		|| define('VIEWS', INCLUDES .'views'. DS);
+define('SITE_URL', $protocol . $_SERVER['SERVER_NAME']);
+define('ROOT_PATH', realpath(dirname(__FILE__) . '/../'));
+
+// GLOBAL CONSTANTS
+const DS = DIRECTORY_SEPARATOR;
+const SITE_NAME = 'PHP MVC Framework';
+const ASSETS_DIR = SITE_URL . DS . 'assets' . DS;
+const CSS_DIR = ASSETS_DIR . 'css';
+const JS_DIR = ASSETS_DIR . 'js';
+const APP_DIR = 'app' . DS;
+const INCLUDES = APP_DIR . 'includes' . DS;
+const CONTROLLERS = INCLUDES . 'controllers' . DS;
+const LIB = INCLUDES . 'lib' . DS;
+const MODELS = INCLUDES . 'models' . DS;
+const STORAGE = INCLUDES . 'storage' . DS;
+const VIEWS = INCLUDES . 'views' . DS;
