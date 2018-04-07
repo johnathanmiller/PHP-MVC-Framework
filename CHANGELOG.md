@@ -1,3 +1,7 @@
+## 1.0.20, 2018-04-07
+- Updated errors method in general to generate html in php and return as string
+- Added comments to various methods
+
 ## 1.0.19, 2018-04-07
 - Updated sidebar method in component class to check if file exists, otherwise throw an exception
 
