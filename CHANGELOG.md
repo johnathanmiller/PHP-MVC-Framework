@@ -1,3 +1,6 @@
+## 1.0.19, 2018-04-07
+- Updated sidebar method in component class to check if file exists, otherwise throw an exception
+
 ## 1.0.18, 2018-03-07
 - Added protected variable token_name in Security class
 - Added renderCSRFInput method in Security class

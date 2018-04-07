@@ -10,31 +10,30 @@ class Component {
 		$this->view = $view;
 	}
 
-	public function site_title($sep = null) {
 
-		$title_array = array();
+	public function site_title($sep = null) {
+		$sep = ($sep === null) ? '-' : $sep;
+		$title_array = [];
 
 		if ($this->controller !== 'home' && $this->view === 'index') {
-
 			$title_array[] = ucfirst($this->controller);
 
 		} else if ($this->view !== 'index') {
-
 			$title_array[] = ucfirst($this->view);
-
 		}
-
-		$sep = ($sep === null) ? '-' : $sep;
 
 		return (!empty($title_array)) ? implode(' ', $title_array) .' '. $sep .' '. SITE_NAME : SITE_NAME;
 
 	}
 	
 	public function sidebar($name) {
+		$path = VIEWS . $this->controller .'/template/';
 
-		$sidebar = VIEWS . $this->controller .'/template/'. $name .'.php';
-		include_once $sidebar;
+		if (file_exists($path . $name .'.php')) {
+			return include_once $path . $name .'.php';
+		}
 
+		throw new Exception('Sidebar with name "'. $name .'" was not found in path "'. $path .'"');
 	}
 
 }
