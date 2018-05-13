@@ -29,8 +29,8 @@ class Application {
 
 		}
 
-		require_once CONTROLLERS . $this->controller .'.php';
-		$this->controller	= new $this->controller;
+		require_once CONTROLLERS . ucwords($this->controller) .'.php';
+		$this->controller = new $this->controller;
 
 		/**
 		 *

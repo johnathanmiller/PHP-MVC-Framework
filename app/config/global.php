@@ -10,9 +10,9 @@ define('ROOT_PATH', realpath(dirname(__FILE__) . '/../'));
 // GLOBAL CONSTANTS
 const DS = DIRECTORY_SEPARATOR;
 const SITE_NAME = 'PHP MVC Framework';
-const ASSETS_DIR = SITE_URL . DS . 'assets' . DS;
-const CSS_DIR = ASSETS_DIR . 'css';
-const JS_DIR = ASSETS_DIR . 'js';
+const ASSETS_DIR = SITE_URL . DS . 'assets';
+const CSS_DIR = ASSETS_DIR . DS . 'css';
+const JS_DIR = ASSETS_DIR . DS . 'js';
 const APP_DIR = 'app' . DS;
 const INCLUDES = APP_DIR . 'includes' . DS;
 const CONTROLLERS = INCLUDES . 'controllers' . DS;

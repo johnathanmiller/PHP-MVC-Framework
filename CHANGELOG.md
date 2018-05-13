@@ -1,3 +1,8 @@
+## 1.0.21, 2018-05-13
+- Added .gitignore
+- Updated constant values in global config
+- Updated construct method in application to capitalize the controller filename to be compatible with nginx
+
 ## 1.0.20, 2018-04-07
 - Updated errors method in general to generate html in php and return as string
 - Added comments to various methods
