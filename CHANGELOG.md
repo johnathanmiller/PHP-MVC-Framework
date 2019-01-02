@@ -1,3 +1,12 @@
+## 2.0.0, 2019-01-01
+- Minimum PHP version requirement is 7.1
+- Added PHP7 return type declarations
+- Added capability to load multiple models in each view
+- Added sass stylesheet files
+- Updated config files to load dev/prod environment variables
+- Updated views to utilize twig templates
+- Restructured directories
+
 ## 1.0.21, 2018-05-13
 - Added .gitignore
 - Updated constant values in global config

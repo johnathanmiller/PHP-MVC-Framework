@@ -1,102 +1,14 @@
-/* RESET
-** ============================ */
-*,
-*:before,
-*:after {
-  border: none;
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-*:focus {
-  outline: 0;
-}
-
-ul, ol {
-  list-style: none;
-}
-
 /* GENERAL
 ** ============================ */
-html, body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-/* NAV
-** ============================ */
-.navbar-nav {
-  float: none;
-  position: relative;
-  z-index: 999;
-}
-.navbar-brand {
-  padding: 15px 0;
-}
-
-/* CONTENT
-** ============================ */
-.content-wrapper {
-  min-height: 100%;
-  position: relative;
-  margin-top: -50px;
-}
-
-.content {
-  min-height: 100%;
-  padding: 95px 0;
-}
-
-/* SIDEBAR
-** ============================ */
-aside .btn {
-  width: 100%;
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-aside .btn:hover {
-  text-decoration: none;
-}
-aside .btn:last-child {
-  margin-bottom: 0;
-}
-
-/* FOOTER
-** ============================ */
-footer {
-  width: 100%;
-  height: auto;
-  text-align: center;
-  background-color: #eeeeee;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-footer span {
-  color: #777777;
-  font-size: 12px;
-  line-height: 50px;
-  margin: 0;
+.btn {
+  font-size: 1.1vw;
+  white-space: normal !important;
 }
 
 /* MEDIA QUERIES
 ** ============================ */
-@media only screen and (max-width: 767px) {
-
-  .navbar-nav {
-    margin: 0;
-  }
-
-  footer {
-    text-align: center;
-    padding: 0;
-  }
-
-  footer span {
-    font-size: 8px;
+@media (max-width: 767.98px) {
+  .btn {
+    font-size: 2.7vw !important;
   }
 }

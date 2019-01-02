@@ -1,0 +1,39 @@
+{% extends 'home/template/main.twig' %}
+
+{% block content %}
+
+<div class="container mt-3 mb-3">
+    <div class="row">
+        <div class="col-xs-10 col-sm-6 col-md-4 m-auto">
+            <div class="login-form">
+                <header>
+                    <h2>Sign up</h2>
+                </header>
+                <span>Enter your email address and password to create an account.</span>
+                
+                {% if errors is not empty %}
+                    {{ errors | raw }}
+                {% endif %}
+                
+                <form method="post">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" value="{{ form.data.email }}" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="repeat_password" id="repeat_password" placeholder="Repeat Password">
+                    </div>
+                    
+                    {{ security('renderCSRFInput') | raw }}
+                    
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                    <a href="{{ SITE_URL }}/login" class="btn btn-link">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
