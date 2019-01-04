@@ -7,7 +7,7 @@ class Application
     protected $view = 'index';
     protected $params = [];
 
-    public function __construct()
+    public function run() : void
     {
         $url = $this->parseUrl();
 

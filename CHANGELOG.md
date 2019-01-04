@@ -1,3 +1,6 @@
+## 2.1.0, 2019-01-03
+- Returning application now requires run method
+
 ## 2.0.2, 2019-01-03
 - Updated controller if statement in application class
 
