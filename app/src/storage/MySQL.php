@@ -3,7 +3,7 @@
 class MySQL
 {
 
-    protected $dbhandler;
+    protected $handler;
     protected $stmt;
 
     public function __construct(
@@ -20,16 +20,16 @@ class MySQL
         ];
 
         try {
-            $this->dbhandler = new \PDO($dsn, $user, $pass, $options);
+            $this->handler = new \PDO($dsn, $user, $pass, $options);
 
-        } catch (\Exception $e) {
+        } catch (\PDOException $e) {
             echo $e->getMessage();
         }
     }
 
     public function query($query) : void
     {
-        $this->stmt = $this->dbhandler->prepare($query);
+        $this->stmt = $this->handler->prepare($query);
     }
 
     public function bind($param, $value, $type = null) : void
@@ -86,22 +86,22 @@ class MySQL
 
     public function lastInsertId()
     {
-        return $this->dbhandler->lastInsertId();
+        return $this->handler->lastInsertId();
     }
 
     public function beginTransaction()
     {
-        return $this->dbhandler->beginTransaction();
+        return $this->handler->beginTransaction();
     }
 
     public function endTransaction()
     {
-        return $this->dbhandler->commit();
+        return $this->handler->commit();
     }
 
     public function cancelTransaction()
     {
-        return $this->dbhandler->rollBack();
+        return $this->handler->rollBack();
     }
 
     public function debugDumpParams()

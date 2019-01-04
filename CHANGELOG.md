@@ -1,3 +1,8 @@
+## 2.0.1, 2019-01-03
+- Updated composer package
+- Updated property name in MySQL class
+- Updated prod config file with SecureEnvPHP parse method
+
 ## 2.0.0, 2019-01-01
 - Minimum PHP version requirement is 7.1
 - Added PHP7 return type declarations
