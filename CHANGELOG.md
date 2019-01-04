@@ -1,3 +1,6 @@
+## 2.0.2, 2019-01-03
+- Updated controller if statement in application class
+
 ## 2.0.1, 2019-01-03
 - Updated composer package
 - Updated property name in MySQL class

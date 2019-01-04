@@ -12,11 +12,15 @@ class Application
         $url = $this->parseUrl();
 
         /**
-         * If first parameter isn't empty and exists as controller, set as controller
+         * If first parameter is set, isn't empty, and exists as controller, set as controller
+         * Else if, first parameter is set and is empty, set to default controller
          * Else, prepend default controller to url array
          */
-        if (!empty($url[0]) && file_exists(DIR['CONTROLLERS'] . '/' . $url[0] . '.php')) {
+        if (isset($url[0]) && !empty($url[0]) && file_exists(DIR['CONTROLLERS'] . '/' . $url[0] . '.php')) {
             $this->controller = $url[0];
+
+        } else if (isset($url[0]) && empty($url[0])) {
+            $this->controller = $this->controller;
 
         } else {
             array_unshift($url, $this->controller);
