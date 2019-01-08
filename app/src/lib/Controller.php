@@ -14,7 +14,7 @@ class Controller
      * @param array $params View paramaters, empty by default
      * @param array $models Array of model names, null by default
      */
-    public function view(array $params = [], array $models = null) : void
+    public function view(array $params = [], ?array $models = null) : void
     {
         $data = $params;
 
@@ -50,8 +50,7 @@ class Controller
          * Fallback to 404 if view file doesn't exist
          */
         if (!file_exists($php_path . '/' . $view_path)) {
-            $controller = 'home';
-            $view_path = '404.php';
+            Url::redirect(SITE_URL . '/404');
         }
 
         /**

@@ -1,11 +1,15 @@
 <?php
 
-spl_autoload_register('autoloader');
-
 require_once './app/config/global.php';
+
+spl_autoload_register('autoloader');
 
 function autoloader(string $class)
 {
+    if (class_exists($class)) {
+        return;
+    }
+
     $directories = [
         DIR['LIB'],
         DIR['STORAGE'],
@@ -19,5 +23,5 @@ function autoloader(string $class)
         }
     }
 
-    throw new \Exception('Failed to include class: '. $class);
+    throw new \Exception('Failed to include class: ' . $class);
 }

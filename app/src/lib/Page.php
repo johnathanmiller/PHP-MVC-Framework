@@ -11,12 +11,11 @@ class Page
      * @static
      * 
      * @param array $data View parameters
-     * @param string $sep Title separator, null by default
+     * @param string $sep Title separator, - by default
      * @return string
      */
-    public static function title(array $data, string $sep = null) : string
+    public static function title(array $data, string $sep = '-') : string
     {
-        $sep = (is_null($sep)) ? '-' : $sep;
         $title_array = [];
         
         if (isset($data['title']) && !is_null($data['title'])) {

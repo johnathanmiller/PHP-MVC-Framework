@@ -19,7 +19,7 @@ class Application
         if (isset($url[0]) && !empty($url[0]) && file_exists(DIR['CONTROLLERS'] . '/' . $url[0] . '.php')) {
             $this->controller = $url[0];
 
-        } else if (isset($url[0]) && empty($url[0])) {
+        } elseif (isset($url[0]) && empty($url[0])) {
             $this->controller = $this->controller;
 
         } else {

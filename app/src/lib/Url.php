@@ -14,20 +14,6 @@ class Url
         return $path_parts;
     }
 
-    public static function parameter($name, $value = null) : bool
-    {
-        if ($value == null) {
-            if (!empty($name)) {
-                return true;
-            }
-        } else {
-            if (!empty($name) && $name == $value) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static function isActive(string $page, string $default_class) : string
     {
         if (self::currentPage()[0] === $page) {

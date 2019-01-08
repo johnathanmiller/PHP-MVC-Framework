@@ -1,3 +1,9 @@
+## 2.1.1, 2019-01-08
+- Standard edits
+- 404 fallback is now a redirect
+- Set $sep to a dash by default instead of null in title function
+- Removed parameter function in url class
+
 ## 2.1.0, 2019-01-03
 - Returning application now requires run method
 

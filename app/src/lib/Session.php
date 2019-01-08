@@ -13,12 +13,12 @@ class Session
         self::validate();
     }
 
-    public static function set($key, $value) : void
+    public static function set(string $key, $value) : void
     {
         $_SESSION[$key] = $value;
     }
 
-    public static function get($key) : ?string
+    public static function get(string $key) : ?string
     {
         if (isset($_SESSION[$key])) {
             return $_SESSION[$key];
@@ -26,7 +26,7 @@ class Session
         return null;
     }
 
-    public static function delete($key) : void
+    public static function delete(string $key) : void
     {
         if (isset($_SESSION[$key])) {
             unset($_SESSION[$key]);
