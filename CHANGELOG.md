@@ -1,3 +1,6 @@
+## 2.1.3, 2019-04-26
+- Updated secure env php dependecy and parse method
+
 ## 2.1.2, 2019-04-26
 - Updated to use built in function for checking php version
 

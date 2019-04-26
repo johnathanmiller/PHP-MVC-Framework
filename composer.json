@@ -1,7 +1,7 @@
 {
     "require": {
         "twig/twig": "^2.6",
-        "johnathanmiller/secure-env-php": "^1.2"
+        "johnathanmiller/secure-env-php": "^2.0"
     },
     "require-dev": {
         "vlucas/phpdotenv": "^2.5"
