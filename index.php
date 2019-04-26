@@ -1,7 +1,7 @@
 <?php
 
 try {
-    if ((float)phpversion() < 7.1) {
+    if (version_compare(phpversion(), '7.1', '<')) {
         throw new \Exception('Minimum required PHP version is 7.1');
     }
 

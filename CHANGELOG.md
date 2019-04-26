@@ -1,3 +1,6 @@
+## 2.1.2, 2019-04-26
+- Updated to use built in function for checking php version
+
 ## 2.1.1, 2019-01-08
 - Standard edits
 - 404 fallback is now a redirect
